@@ -1,0 +1,201 @@
+:root {
+    --chart-comedy: #f39c12;
+    --chart-drama: #e74c3c;
+    --chart-action: #3498db;
+    --chart-animation: #9b59b6;
+    --chart-adventure: #2ecc71;
+    --chart-documentary: #16a085;
+    --chart-horror: #2c3e50;
+    --chart-crime: #8e44ad;
+    --chart-romance: #d35400;
+    --chart-thriller: #7f8c8d;
+    --chart-track: #d98282;
+}
+
+/* UVODNI TEKST */
+.chart-intro {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 30px auto;
+}
+
+/* DESKTOP HISTOGRAM */
+.chart-desktop {
+    display: block;
+    max-width: 950px;
+    margin: 0 auto 50px auto;
+}
+
+.bar-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 14px;
+}
+
+.bar-label {
+    width: 190px;
+    font-weight: bold;
+    text-align: left;
+    flex-shrink: 0;
+}
+
+.bar-track {
+    flex: 1;
+    height: 40px;
+    background: #e08a8a;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    border-radius: 8px;
+    animation: growBar 1.2s ease-out forwards;
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.bar-fill:hover {
+    filter: brightness(1.08);
+    transform: scaleY(1.04);
+}
+
+.comedy {
+    width: 100%;
+    background: var(--chart-comedy);
+}
+
+.drama {
+    width: 100%;
+    background: var(--chart-drama);
+}
+
+.action {
+    width: 50%;
+    background: var(--chart-action);
+}
+
+.animation {
+    width: 25%;
+    background: var(--chart-animation);
+}
+
+.adventure {
+    width: 25%;
+    background: var(--chart-adventure);
+}
+
+.documentary {
+    width: 25%;
+    background: var(--chart-documentary);
+}
+
+.horror {
+    width: 25%;
+    background: var(--chart-horror);
+}
+
+.crime {
+    width: 25%;
+    background: var(--chart-crime);
+}
+
+.romance {
+    width: 25%;
+    background: var(--chart-romance);
+}
+
+.thriller {
+    width: 25%;
+    background: var(--chart-thriller);
+}
+
+@keyframes growBar {
+    from {
+        width: 0;
+    }
+}
+
+/* MOBILE PIE CHART */
+.chart-mobile {
+    display: none;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.pie-chart-films {
+    width: 260px;
+    height: 260px;
+    margin: 0 auto 25px auto;
+    border-radius: 50%;
+    background: conic-gradient(
+        var(--chart-comedy) 0% 21%,
+        var(--chart-drama) 21% 42%,
+        var(--chart-action) 42% 53%,
+        #d9d9d9 53% 100%
+    );
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+    animation: showPie 1.1s ease-out;
+    transition: transform 0.3s ease;
+}
+
+.pie-chart-films:hover {
+    transform: scale(1.04);
+}
+
+@keyframes showPie {
+    from {
+        transform: scale(0.7) rotate(-90deg);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+.pie-legend {
+    max-width: 320px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.pie-legend div {
+    margin-bottom: 10px;
+}
+
+.legend-box {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+.legend-comedy {
+    background: var(--chart-comedy);
+}
+
+.legend-drama {
+    background: var(--chart-drama);
+}
+
+.legend-action {
+    background: var(--chart-action);
+}
+
+.legend-other {
+    background: #d9d9d9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .chart-desktop {
+        display: none;
+    }
+
+    .chart-mobile {
+        display: block;
+    }
+}

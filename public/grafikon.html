@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO meta tag: opis sadržaja stranice za tražilice -->
+    <meta name="description" content="CSS grafikon filmova po žanrovima s histogramom i kružnim prikazom.">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="grafikon.css">
+
+    <title>Grafikon filmova</title>
+</head>
+<body>
+
+    <header>
+        <h1>Moja web stranica o filmovima</h1>
+    </header>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-btn">☰ Menu</label>
+
+    <nav aria-label="Primarna navigacija">
+        <ul class="nav-menu">
+            <li><a href="/">Početna</a></li>
+            <li><a href="/grafikon">Grafikoni</a></li>
+            <li><a href="/slike">Galerija</a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <section aria-labelledby="grafikon-naslov">
+            <h2 id="grafikon-naslov">Zastupljenost žanrova filmova</h2>
+            <p class="chart-intro">
+                Vizualizacija je izrađena samo pomoću HTML-a i CSS-a. Na većim ekranima prikazuje se histogram,
+                a na manjim ekranima kružni grafikon.
+            </p>
+
+            <div class="chart-desktop" role="img" aria-label="Histogram žanrova filmova">
+                <div class="bar-row">
+                    <span class="bar-label">Komedija (4)</span>
+                    <div class="bar-track"><div class="bar-fill comedy" title="Komedija - 4 filma"></div></div>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">Drama (4)</span>
+                    <div class="bar-track"><div class="bar-fill drama" title="Drama - 4 filma"></div></div>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">Akcija (2)</span>
+                    <div class="bar-track"><div class="bar-fill action" title="Akcija - 2 filma"></div></div>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">Animacija (1)</span>
+                    <div class="bar-track"><div class="bar-fill animation" title="Animacija - 1 film"></div></div>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">Avantura (1)</span>
+                    <div class="bar-track"><div class="bar-fill adventure" title="Avantura - 1 film"></div></div>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">Dokumentarni (1)</span>
+                    <div class="bar-track"><div class="bar-fill documentary" title="Dokumentarni - 1 film"></div></div>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">Horor (1)</span>
+                    <div class="bar-track"><div class="bar-fill horror" title="Horor - 1 film"></div></div>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">Krimić (1)</span>
+                    <div class="bar-track"><div class="bar-fill crime" title="Krimić - 1 film"></div></div>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">Romantični (1)</span>
+                    <div class="bar-track"><div class="bar-fill romance" title="Romantični - 1 film"></div></div>
+                </div>
+                <div class="bar-row">
+                    <span class="bar-label">Triler (1)</span>
+                    <div class="bar-track"><div class="bar-fill thriller" title="Triler - 1 film"></div></div>
+                </div>
+            </div>
+
+            <div class="chart-mobile" role="img" aria-label="Kružni grafikon žanrova filmova">
+                <div class="pie-chart-films" title="Pie chart zastupljenosti žanrova"></div>
+
+                <div class="pie-legend">
+                    <div><span class="legend-box legend-comedy"></span> Komedija (21%)</div>
+                    <div><span class="legend-box legend-drama"></span> Drama (21%)</div>
+                    <div><span class="legend-box legend-action"></span> Akcija (11%)</div>
+                    <div><span class="legend-box legend-other"></span> Ostalo (47%)</div>
+                </div>
+            </div>
+        </section>
+
+        <section aria-labelledby="grafikon-analiza">
+            <h2 id="grafikon-analiza">Kratko objašnjenje</h2>
+
+            <div class="analysis-flex">
+                <article class="analysis-box">
+                    <h3>Najzastupljeniji žanrovi</h3>
+                    <p>Komedija i drama imaju najveći broj filmova u prikazanoj tablici.</p>
+                </article>
+
+                <article class="analysis-box">
+                    <h3>Responzivni prikaz</h3>
+                    <p>Na većim ekranima koristi se histogram, dok se na mobilnim uređajima prikazuje pie chart.</p>
+                </article>
+
+                <article class="analysis-box">
+                    <h3>CSS-only pristup</h3>
+                    <p>Grafikon je izrađen bez JavaScripta, koristeći gradijente, animacije i media query pravila.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025. Web programiranje. Sva prava pridržana.</p>
+    </footer>
+
+</body>
+</html>

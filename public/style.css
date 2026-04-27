@@ -1,0 +1,365 @@
+:root {
+    --primary-color: #ff7b00;
+    --primary-dark: #cc6200;
+    --secondary-color: #5a2a2a;
+    --background-color: #f4f4f4;
+    --surface-color: #ffffff;
+    --text-color: #222222;
+    --light-text: #ffffff;
+    --border-color: #dddddd;
+    --shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    --radius: 12px;
+    --transition: 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+header {
+    background: var(--primary-color);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+nav {
+    background: #333;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 15px 24px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.nav-menu a:hover {
+    background: var(--primary-color);
+}
+
+.content {
+    max-width: 1350px;
+    margin: 30px auto;
+    padding: 45px 25px;
+    background: var(--surface-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+#opis-tablice {
+    margin-bottom: 20px;
+}
+
+/* FILTERI */
+#filteri {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #fafafa;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+}
+
+#filteri label {
+    font-weight: bold;
+}
+
+#filteri input,
+#filteri select {
+    padding: 7px 9px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+#filteri input[type="range"] {
+    padding: 0;
+}
+
+/* LAYOUT */
+.data-container {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+}
+
+.table-section {
+    flex: 3;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: collapse;
+    background: white;
+    overflow: hidden;
+    border-radius: var(--radius);
+}
+
+thead {
+    background: var(--secondary-color);
+    color: white;
+}
+
+th,
+td {
+    border: 1px solid var(--border-color);
+    padding: 12px 10px;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tbody tr:hover {
+    background: #fff0e0;
+}
+
+/* KOŠARICA */
+#kosarica {
+    flex: 1;
+    min-width: 280px;
+    max-width: 340px;
+    background: #fafafa;
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    position: sticky;
+    top: 90px;
+}
+
+#kosarica h3 {
+    margin-top: 0;
+    color: var(--secondary-color);
+    font-size: 1.35rem;
+}
+
+#broj-filmova {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#lista-kosarice {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    text-align: left;
+}
+
+#lista-kosarice li {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+#poruka-kosarice {
+    margin-top: 15px;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+/* GUMBI */
+button,
+.button-link {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 7px 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-block;
+}
+
+button:hover,
+.button-link:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+#reset-filtera {
+    background: #555;
+}
+
+#reset-filtera:hover {
+    background: #333;
+}
+
+#lista-kosarice button {
+    margin-top: 8px;
+    padding: 5px 9px;
+    font-size: 0.85rem;
+}
+
+/* ANALIZA */
+.analysis-flex {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.analysis-box {
+    flex: 1;
+    background: #eeeeee;
+    padding: 22px;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+    transition: var(--transition);
+}
+
+.analysis-box:hover {
+    transform: translateY(-4px);
+}
+
+.analysis-box h3 {
+    margin-top: 0;
+    color: var(--secondary-color);
+}
+
+/* FOOTER */
+footer {
+    margin-top: 30px;
+    padding: 18px 10px;
+    background: #222;
+    color: white;
+    text-align: center;
+}
+
+/* MOBILE MENU */
+.menu-toggle {
+    display: none;
+}
+
+.menu-btn {
+    display: none;
+    background: #333;
+    color: white;
+    padding: 12px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* TABLET */
+@media (max-width: 992px) {
+    .data-container {
+        flex-direction: column;
+    }
+
+    #kosarica {
+        position: static;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .analysis-flex {
+        flex-wrap: wrap;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    .content {
+        margin: 15px;
+        padding: 25px 15px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .menu-toggle:checked + .menu-btn + nav {
+        display: block;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+    }
+
+    .nav-menu a {
+        text-align: center;
+    }
+
+    #filteri {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #filteri input,
+    #filteri select,
+    #filteri button {
+        width: 100%;
+    }
+
+    table {
+        min-width: 760px;
+    }
+
+    .analysis-flex {
+        flex-direction: column;
+    }
+}
